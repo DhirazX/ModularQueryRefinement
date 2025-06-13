@@ -1,1 +1,40 @@
-This is a simple dummy text. It contains multiple sentences and some words like running, ran, and runs!
+What is the difference between a stack and a queue?
+How does a queue differ from a stack in terms of data access?
+Explain the time complexity of binary search.
+What is the time complexity of searching in a sorted array using binary search?
+How is recursion different from iteration?
+Compare recursion with iteration. When would you use one over the other?
+Write a program to reverse a linked list.
+How can you reverse a singly linked list in-place?
+What is a binary tree?
+Define a binary tree and explain its basic operations.
+What is the difference between a hash table and an array?
+How do hash tables improve search performance over arrays?
+What are the advantages of using a graph over a tree?
+In what scenarios would a graph be a better choice than a tree?
+What is a process in an operating system?
+Explain the difference between a process and a thread.
+How do threads differ from processes?
+What is context switching and why is it important?
+Describe how memory is managed in modern operating systems.
+How does virtual memory work?
+What is normalization in databases?
+Why is database normalization important?
+Compare SQL and NoSQL databases.
+What are the differences between relational and non-relational databases?
+Explain ACID properties in a database system.
+What is the OSI model and why is it important?
+Explain the purpose of the OSI model.
+What is the difference between TCP and UDP?
+Compare TCP and UDP in terms of reliability and use cases.
+What is encryption?
+Explain how symmetric encryption differs from asymmetric encryption.
+What is hashing, and how is it used in security?
+What is a design pattern? Give an example.
+Explain the Singleton pattern.
+What is the difference between Agile and Waterfall models?
+How does Agile development differ from traditional software development approaches?
+What is the halting problem?
+Can every problem be solved by a computer? Why or why not?
+What is Big-O notation and why is it important?
+Explain why Big-O analysis is used in algorithm design.
