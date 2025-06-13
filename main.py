@@ -20,38 +20,38 @@ noun_phrases = [chunk.text for chunk in doc.noun_chunks]
 
 
 # Extract keyword score using keyBERT
-kw_model = KeyBERT()
-keywords = kw_model.extract_keywords(
-    cleanText,
-    keyphrase_ngram_range=(1,2),
-    stop_words='english'
-)
-print(keywords)
+# kw_model = KeyBERT()
+# keywords = kw_model.extract_keywords(
+#     cleanText,
+#     keyphrase_ngram_range=(1,2),
+#     stop_words='english'
+# )
+# print(keywords)
 
 
 # Encode noun_phrases and the entire text and compare them to check relevancy of the keywords
-# model = SentenceTransformer('all-MiniLM-L6-v2')
-# doc_emb = model.encode(cleanText, convert_to_tensor=True)
+model = SentenceTransformer('all-MiniLM-L6-v2')
+doc_emb = model.encode(cleanText, convert_to_tensor=True)
 
-# results = []
-# for phrase in noun_phrases:
-#     ph_emb = model.encode(phrase, convert_to_tensor=True)
-#     score = util.cos_sim(doc_emb, ph_emb).item()
-#     results.append((phrase, score))
+results = []
+for phrase in noun_phrases:
+    ph_emb = model.encode(phrase, convert_to_tensor=True)
+    score = util.cos_sim(doc_emb, ph_emb).item()
+    results.append((phrase, score))
 
-# sorted_results = sorted(results, key=lambda x: x[1], reverse=True)
-
-
-
-# seen = set()
-# unique_results = []
-# for phrase, score in sorted_results:
-#     key = phrase.lower().strip()
-#     if key not in seen:
-#         unique_results.append((phrase, score))
-#         seen.add(key)
+sorted_results = sorted(results, key=lambda x: x[1], reverse=True)
 
 
-# print("\nTop Relevant Phrases:")
-# for phrase, score in unique_results:
-#     print(f"{phrase} --> {score}")
+# Filter redundant data
+seen = set()
+unique_results = []
+for phrase, score in sorted_results:
+    key = phrase.lower().strip()
+    if key not in seen:
+        unique_results.append((phrase, score))
+        seen.add(key)
+
+
+print("\nTop Relevant Phrases:")
+for phrase, score in unique_results:
+    print(f"{phrase} --> {score}")
