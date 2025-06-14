@@ -29,6 +29,15 @@ noun_phrases = [chunk.text for chunk in doc.noun_chunks]
 # print(keywords)
 
 
+# Corpus, redundant words lai hataunaparyo - unique words nikalnaparyo
+# word2Vec
+
+# precision recall
+# topic ranking, LDA, nmf
+# summarization 
+# Machine learning - auto encoder
+
+
 # Encode noun_phrases and the entire text and compare them to check relevancy of the keywords
 model = SentenceTransformer('all-MiniLM-L6-v2')
 doc_emb = model.encode(cleanText, convert_to_tensor=True)
